@@ -1,0 +1,15 @@
+C:\Users\oceanic\source\repos\Judge\Judge\bin\Debug\net6.0\Judge.exe
+C:\Users\oceanic\source\repos\Judge\Judge\bin\Debug\net6.0\Judge.deps.json
+C:\Users\oceanic\source\repos\Judge\Judge\bin\Debug\net6.0\Judge.runtimeconfig.json
+C:\Users\oceanic\source\repos\Judge\Judge\bin\Debug\net6.0\Judge.dll
+C:\Users\oceanic\source\repos\Judge\Judge\bin\Debug\net6.0\Judge.pdb
+C:\Users\oceanic\source\repos\Judge\Judge\obj\Debug\net6.0\Judge.csproj.AssemblyReference.cache
+C:\Users\oceanic\source\repos\Judge\Judge\obj\Debug\net6.0\Judge.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oceanic\source\repos\Judge\Judge\obj\Debug\net6.0\Judge.AssemblyInfoInputs.cache
+C:\Users\oceanic\source\repos\Judge\Judge\obj\Debug\net6.0\Judge.AssemblyInfo.cs
+C:\Users\oceanic\source\repos\Judge\Judge\obj\Debug\net6.0\Judge.csproj.CoreCompileInputs.cache
+C:\Users\oceanic\source\repos\Judge\Judge\obj\Debug\net6.0\Judge.dll
+C:\Users\oceanic\source\repos\Judge\Judge\obj\Debug\net6.0\refint\Judge.dll
+C:\Users\oceanic\source\repos\Judge\Judge\obj\Debug\net6.0\Judge.pdb
+C:\Users\oceanic\source\repos\Judge\Judge\obj\Debug\net6.0\Judge.genruntimeconfig.cache
+C:\Users\oceanic\source\repos\Judge\Judge\obj\Debug\net6.0\ref\Judge.dll

@@ -1,0 +1,2 @@
+C:\Users\oceanic\source\repos\Judge\Judge\bin\Release\net6.0\win10-x64\publish\Judge.pdb
+C:\Users\oceanic\source\repos\Judge\Judge\bin\Release\net6.0\win10-x64\publish\Judge.exe
