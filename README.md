@@ -14,8 +14,8 @@ How to Use?
     ```g++ -o main.exe main.cpp PartI.cpp PartII.cpp``` \
     (open cmd and paste)
 4. Run Judge.exe.
-**It doesn't matter if you use the cout object. (It will not cause WA)**
-But BE CARE FOR something like **system** or **assert** that consumes lots of time.
+**It doesn't matter if you use the cout object. (It will not cause WA)** \
+But *BE CARE* for something like **system** or **assert** that consumes lots of time.
 
 What if the Judge told me something like "there is a latest version"
 ---
