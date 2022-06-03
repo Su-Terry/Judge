@@ -13,7 +13,7 @@ How to Use?
 3. re-compile main.exe \
     ```g++ -o main.exe main.cpp PartI.cpp PartII.cpp``` \
     (open cmd and paste)
-4. Run Judge.exe. (remember to open internet)
+4. Run Judge.exe.
 
 What if the Judge told me something like "there is a latest version"
 ---
