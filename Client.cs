@@ -5,7 +5,7 @@ namespace Judge
 {
     internal class Client
     {
-        private const string version = "1.0.0.0";
+        private const string version = "1.0.2";
         const string versionURL = @"https://pastebin.com/raw/jBUYitzT";
 
         private static async Task<bool> CheckIsLatestVersion(string version)
@@ -19,11 +19,18 @@ namespace Judge
 
         public static void Validate()
         {
-            bool result = CheckIsLatestVersion(version).Result;
-            if (!result)
+            try
             {
-                Console.WriteLine("The judge has been updated.");
-                Console.WriteLine("Plz re-download");
+                bool result = CheckIsLatestVersion(version).Result;
+                if (!result)
+                {
+                    Console.WriteLine("The judge has been updated.");
+                    Console.WriteLine("Plz re-download");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("OFFLINE MODE");
             }
         }
     }

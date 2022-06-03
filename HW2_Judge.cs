@@ -6,11 +6,11 @@ namespace Judge
 
     enum ErrorCode
     {
-        UNDEFINED, MAJI_HAO_CHIH, WRONG_FORMAT, 
+        UNDEFINED, WRONG_FORMAT, TLE,
         ILLEGAL_IDX, INCORRECT, UNUSED_GROUP, 
         REPEAT_NODE, NEG_CIRCLE_DETERMINE_FAIL,
         WRONG_GRAPH_TYPE, THE_JUDGE_SKIPPED_YOUR_SUBMITION,
-        HAS_ILLEGAL_CHAR, TLE, SIZE_DIFFER_FROM_N
+        HAS_ILLEGAL_CHAR, SIZE_DIFFER_FROM_N
     };
 
     internal class HW2_Judge
@@ -109,22 +109,38 @@ namespace Judge
                 List<List<int>> data2 = q2.Gen(verifyTLE);
                 WriteTest(fin1, data1);
                 WriteTest(fin2, data2);
-                proc.Start();
-                bool tle = !proc.WaitForExit(1000);
-                proc.Close();
-                if (tle)
+                try
                 {
-                    verdict = Verdict.TLE;
-                    errorCode = ErrorCode.TLE;
+                    proc.Start();
+                    bool tle = !proc.WaitForExit(2000);
+                    proc.Close();
+                    if (tle)
+                    {
+                        verdict = Verdict.TLE;
+                        errorCode = ErrorCode.TLE;
+                    }
                 }
-                vproc.Start();
-                bool vtle = !vproc.WaitForExit(1000);
-                vproc.Close();
-                if (vtle)
+                catch
                 {
-                    verdict = Verdict.TLE;
-                    errorCode = ErrorCode.TLE;
+                    verdict = Verdict.RE;
                 }
+                
+                try
+                {
+                    vproc.Start();
+                    bool vtle = !vproc.WaitForExit(2000);
+                    vproc.Close();
+                    if (vtle)
+                    {
+                        verdict = Verdict.TLE;
+                        errorCode = ErrorCode.TLE;
+                    }
+                }
+                catch
+                {
+                    verdict = Verdict.RE;
+                }
+                
                 List<List<int>> opt1 = ReadAns(fout1)!;
                 List<List<int>> ans1 = ReadAns(fans1)!;
                 List<List<int>>? opt2 = ReadAns(fout2);
