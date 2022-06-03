@@ -10,7 +10,7 @@ How to Use?
 ---
 1. open "proc/" folder
 2. put your PartI.h, PartI.cpp, PartII.h, PartII.cpp in the folder.
-3. re-compile main.exe \
+3. re-compile main.cpp \
     ```g++ -o main.exe main.cpp PartI.cpp PartII.cpp``` \
     (open cmd and paste)
 4. Run Judge.exe.
