@@ -14,6 +14,8 @@ How to Use?
     ```g++ -o main.exe main.cpp PartI.cpp PartII.cpp``` \
     (open cmd and paste)
 4. Run Judge.exe.
+**It doesn't matter if you use the cout object. (It will not cause WA)**
+But BE CARE FOR something like **system** or **assert** that consumes lots of time.
 
 What if the Judge told me something like "there is a latest version"
 ---
@@ -21,7 +23,7 @@ Just re-download it, everything will be fine.
 
 What if I got WA and I want to look up the test data
 ---
-The test datas are in the "io/" folders \
+The test datas are in the "io/" folder
 in1.txt, in2.txt are inputs \
 out1.txt, out2.txt are outputs by your program \
 ans1.txt, ans2.txt are outputs from the judge
