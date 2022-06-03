@@ -17,10 +17,6 @@ How to Use?
 **It doesn't matter if you use the cout object. (It will not cause WA)** \
 But *BE CARE* for something like **system** or **assert** that consumes lots of time.
 
-What if the Judge told me something like "there is a latest version"
----
-Just re-download it, everything will be fine.
-
 What if I got WA and I want to look up the test data
 ---
 The test datas are in the "io/" folder
