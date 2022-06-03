@@ -29,3 +29,9 @@ ans1.txt, ans2.txt are outputs from the judge
 What if The Judge shows Judge_error
 ---
 這代表作者自己把code寫爛了，請通知作者
+
+Result
+---
+![image](https://user-images.githubusercontent.com/51773435/171774210-65e68feb-1a4a-4e10-b4e2-b657e319d962.png)
+If vertict not in { PENDING, AC }:
+    you will get error_msg and test_id indicate on what test_id and what type of error just occurred.
