@@ -151,7 +151,7 @@
             List<List<int>> edges = new();
             if (verifyRange)
             {
-                for (int i = 1; i <= MAX_NODES; ++i)
+                for (int i = 1; i < MAX_NODES; ++i)
                 {
                     int val = (rand.Next() % 2 == 0) ? MIN_WEIGHT : MAX_WEIGHT;
                     edges.Add(new List<int>() { i - 1, i, val });

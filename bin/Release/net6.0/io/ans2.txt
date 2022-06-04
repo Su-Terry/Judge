@@ -1,2 +1,2 @@
-4280
-Negative loop detected!
+18377
+18377

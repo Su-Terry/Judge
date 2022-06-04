@@ -1,0 +1,2 @@
+C:\Users\oceanic\source\repos\Judge\win10-x64-v2.0.0\Judge.pdb
+C:\Users\oceanic\source\repos\Judge\win10-x64-v2.0.0\Judge.exe
