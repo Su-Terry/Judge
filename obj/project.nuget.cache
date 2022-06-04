@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mNH/3DNP81pfPEfCmWQKehjMRA66lFQebLYiDxf2XLyTvf8/MEDHfk0eEdf/xLgiRrAQ81p3O9tjGcLDopUbhQ==",
+  "dgSpecHash": "J8FszuY9WpnNVKCR2UZ8BYGHs1YHoLHRbtazi5l7bHgz2wdAFxF/X5stCc14sPSRwYJT1APCuyqLmiU7T+ivxQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\oceanic\\source\\repos\\Judge\\Judge\\Judge.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\oceanic\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.4\\microsoft.netcore.app.runtime.win-x64.6.0.4.nupkg.sha512",
-    "C:\\Users\\oceanic\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.4\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.4.nupkg.sha512",
-    "C:\\Users\\oceanic\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.4\\microsoft.aspnetcore.app.runtime.win-x64.6.0.4.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
