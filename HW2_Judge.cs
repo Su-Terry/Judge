@@ -15,10 +15,10 @@ namespace Judge
 
     internal class HW2_Judge
     {
-        static readonly string mainLocation = Path.GetDirectoryName(AppContext.BaseDirectory)!;
-        static readonly string fproc = $"{mainLocation}/proc/main";
-        static readonly string fVerifyProc = $"{mainLocation}/proc/verify";
-        static readonly string ioFolder = $"{mainLocation}/io";
+        //static readonly string mainLocation = HandlePath(Path.GetDirectoryName(AppContext.BaseDirectory)!);
+        static readonly string fproc = $"./proc/main";
+        static readonly string fVerifyProc = $"./proc/verify";
+        static readonly string ioFolder = $"./io";
         static readonly string fin1 = $"{ioFolder}/in1.txt";
         static readonly string fin2 = $"{ioFolder}/in2.txt";
         static readonly string fout1 = $"{ioFolder}/out1.txt";
@@ -31,6 +31,20 @@ namespace Judge
         public static int TestID = 1, TestSubID = 1;
         public static Verdict verdict = Verdict.PENDING;
         public static ErrorCode errorCode = ErrorCode.UNDEFINED;
+
+        private static string HandlePath(string path)
+        {
+            string newPath = string.Empty;
+            foreach (var item in path.Split('\\'))
+            {
+                newPath += !string.IsNullOrWhiteSpace(item) ?
+                    item.Contains(' ') && (!path.StartsWith("\"") || !path.EndsWith("\"")) ?
+                    '"' + item + '"' : item : string.Empty;
+                newPath += '\\';
+            }
+            newPath = newPath.TrimEnd('\\');
+            return newPath;
+        }
 
         private static void WriteTest(string fin, List<List<int>> data)
         {
