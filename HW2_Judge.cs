@@ -43,7 +43,7 @@ namespace Judge
             }
             sw.Close();
         }
-        private static List<List<int>>? ReadAns(string fout)
+        private static List<List<int>> ReadAns(string fout)
         {
             List<List<int>> ans = new();
             using (StreamReader sr = new(fout))
@@ -53,11 +53,14 @@ namespace Judge
                     try
                     {
                         string? line = sr.ReadLine();
-                        if (line == null) break;
+                        if (line == null) continue;
                         line = line.TrimEnd();
                         if (fout == fout2 || fout == fans2)
                             if (line == "Negative loop detected!")
-                                return null;
+                            {
+                                ans.Add(new List<int>());
+                                continue;
+                            }
                         List<string> sNum = line.Split(' ').ToList();
                         List<int> nums = new();
                         foreach (string num in sNum)
@@ -105,8 +108,10 @@ namespace Judge
             {
                 q1 = (TestID % 2 == 0) ? _DAG : _CYCLE;
                 bool verifyTLE = (TestID >= 20);
+                bool verifyNegLoop = (TestID % 2 == 0);
+                bool verifyRange = (TestID >= 55);
                 List<List<int>> data1 = q1.Gen(verifyTLE);
-                List<List<int>> data2 = q2.Gen(verifyTLE);
+                List<List<int>> data2 = q2.Gen(verifyTLE, verifyNegLoop, verifyRange);
                 WriteTest(fin1, data1);
                 WriteTest(fin2, data2);
                 try
@@ -143,8 +148,8 @@ namespace Judge
                 
                 List<List<int>> opt1 = ReadAns(fout1)!;
                 List<List<int>> ans1 = ReadAns(fans1)!;
-                List<List<int>>? opt2 = ReadAns(fout2);
-                List<List<int>>? ans2 = ReadAns(fans2);
+                List<List<int>> opt2 = ReadAns(fout2);
+                List<List<int>> ans2 = ReadAns(fans2);
                 if (verdict == Verdict.PENDING)
                 {
                     if (ques != 2)

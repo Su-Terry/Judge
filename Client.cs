@@ -5,7 +5,7 @@ namespace Judge
 {
     internal class Client
     {
-        private const string version = "1.0.2";
+        private const string version = "v2.0.0-alpha";
         const string versionURL = @"https://pastebin.com/raw/jBUYitzT";
 
         private static async Task<bool> CheckIsLatestVersion(string version)

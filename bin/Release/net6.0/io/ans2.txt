@@ -1,2 +1,2 @@
-80476
-80476
+4280
+Negative loop detected!

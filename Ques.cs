@@ -141,11 +141,26 @@
     internal class Ques2 : Ques
     {
         private Random rand = new();
-        private const int MIN_WEIGHT = -100;
+        private const int MIN_WEIGHT = -10000;
+        private const int SMALL_NEG_VAL = -50;
         private const int MAX_WEIGHT = 10000;
 
-        public List<List<int>> Gen(bool verifyTLE)
+        public List<List<int>> Gen(bool verifyTLE, bool verifyNegLoop, bool verifyRange)
         {
+            List<List<int>> data = new();
+            List<List<int>> edges = new();
+            if (verifyRange)
+            {
+                for (int i = 1; i <= MAX_NODES; ++i)
+                {
+                    int val = (rand.Next() % 2 == 0) ? MIN_WEIGHT : MAX_WEIGHT;
+                    edges.Add(new List<int>() { i - 1, i, val });
+                }
+                data.Add(new List<int>() { MAX_NODES, edges.Count });
+                foreach (List<int> edge in edges)
+                    data.Add(edge);
+                return data;
+            }
             int nodes = (verifyTLE) ? MAX_NODES : rand.Next(MIN_NODES, MIN_NODES + 20);
             bool[,] connect = new bool[nodes, nodes];
             int edgeCnt = 0;
@@ -192,51 +207,42 @@
                 (all[randid], all[i]) = (all[i], all[randid]);
             }
 
-            List<List<int>> data = new();
             data.Add(new List<int> { nodes, edgeCnt });
             for (int i = 0; i < nodes; ++i)
                 for (int j = 0; j < nodes; ++j)
                     if (connect[i, j])
-                        data.Add(new List<int> { all[i], all[j], rand.Next(MIN_WEIGHT, MAX_WEIGHT) });
+                    {
+                        int val = (verifyNegLoop) ? rand.Next(MIN_WEIGHT, MAX_WEIGHT) : rand.Next(SMALL_NEG_VAL, MAX_WEIGHT);
+                        data.Add(new List<int> { all[i], all[j], val });
+                    }
             return data;
         }
 
-        public static void Test(List<List<int>>? opt, List<List<int>>? ans)
+        public static void Test(List<List<int>> opt, List<List<int>> ans)
         {
-            if (opt == null && ans == null)
-                return;
-            else if (opt != null && ans != null)
+            if (ans.Count != 2)
             {
-                if (ans.Count != 2)
-                {
-                    HW2_Judge.verdict = Verdict.JUDGE_ERROR;
-                    HW2_Judge.errorCode = ErrorCode.WRONG_FORMAT;
-                }
-                else if (opt.Count != 2)
-                {
-                    HW2_Judge.verdict = Verdict.WA;
-                    HW2_Judge.errorCode = ErrorCode.WRONG_FORMAT;
-                }
-                else if (ans[0].Count != 1 && ans[1].Count != 1)
-                {
-                    HW2_Judge.verdict = Verdict.JUDGE_ERROR;
-                    HW2_Judge.errorCode = ErrorCode.WRONG_FORMAT;
-                }
-                else if (opt[0].Count != 1 && opt[1].Count != 1)
-                {
-                    HW2_Judge.verdict = Verdict.WA;
-                    HW2_Judge.errorCode = ErrorCode.WRONG_FORMAT;
-                }
-                else if (ans[0][0] != opt[0][0] || ans[1][0] != opt[1][0])
-                {
-                    HW2_Judge.verdict = Verdict.WA;
-                    HW2_Judge.errorCode = ErrorCode.INCORRECT;
-                }
+                HW2_Judge.verdict = Verdict.JUDGE_ERROR;
+                HW2_Judge.errorCode = ErrorCode.WRONG_FORMAT;
+                return;
             }
-            else
+            if (opt.Count != 2)
+            {
+                HW2_Judge.verdict = Verdict.WA;
+                HW2_Judge.errorCode = ErrorCode.WRONG_FORMAT;
+                return;
+            }
+            
+            if (ans[0].Count != opt[0].Count || ans[1].Count != opt[1].Count)
             {
                 HW2_Judge.verdict = Verdict.WA;
                 HW2_Judge.errorCode = ErrorCode.NEG_CIRCLE_DETERMINE_FAIL;
+            }
+            else if (ans[0].Count > 0 && ans[0][0] != opt[0][0] 
+                || ans[1].Count > 0 && ans[1][0] != opt[1][0])
+            {
+                HW2_Judge.verdict = Verdict.WA;
+                HW2_Judge.errorCode = ErrorCode.INCORRECT;
             }
         }
     }
