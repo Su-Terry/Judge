@@ -3,7 +3,7 @@ Judge
 
 How to Download?
 ---
-1. Click Releases on the right side and choose win10-x64-v1.0.2 / win10-x64-v2.0.0-alpha.zip to download \
+1. Click Releases on the right side and choose win10-x64-v1.0.2 / win10-x64-v2.0.0-beta.zip to download \
     (Notice that pre-release version may have bug, and previous version doesn't generate negative loop).
 3. unzip and you will get Judge.exe, Judge.pdb, and two other folders such as "io/", "proc/" (it's quite safe because it is made by me)
 
