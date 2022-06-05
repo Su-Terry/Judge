@@ -201,7 +201,7 @@
             for (int i = 0; i < nodes; ++i)
                 all[i] = i;
 
-            for (int i = nodes - 1; i >= 0; --i)
+            for (int i = nodes - 2; i >= 0; --i)
             {
                 int randid = rand.Next(i + 1);
                 (all[randid], all[i]) = (all[i], all[randid]);
