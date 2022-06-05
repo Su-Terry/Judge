@@ -11,9 +11,9 @@ How to Download?
 How to Use?
 ---
 1. open "proc/" folder
-2. put your PartI.h, PartI.cpp, PartII.h, PartII.cpp in the folder.
+2. put your Part1.h, Part1.cpp, Part2.h, Part2.cpp in the folder.
 3. re-compile main.cpp \
-    ```g++ -o main.exe main.cpp PartI.cpp PartII.cpp``` \
+    ```g++ -o main.exe main.cpp Part1.cpp Part2.cpp``` \
     (open cmd and paste)
 4. Run Judge.exe. (Be sure that you are in the same directory and your directory path has no space in it.)
 **It doesn't matter if you use the cout object. (It will not cause WA)** \
