@@ -14,7 +14,7 @@ How to Use?
 3. re-compile main.cpp \
     ```g++ -o main.exe main.cpp PartI.cpp PartII.cpp``` \
     (open cmd and paste)
-4. Run Judge.exe. (Be sure that you are in the same directory.)
+4. Run Judge.exe. (Be sure that you are in the same directory and your directory path has no space in it.)
 **It doesn't matter if you use the cout object. (It will not cause WA)** \
 But *BE CARE* for something like **system** or **assert** that consumes lots of time.
 
