@@ -19,14 +19,14 @@ How to Use?
 **It doesn't matter if you use the cout object. (It will not cause WA)** \
 But *BE CARE* for something like **system** or **assert** that consumes lots of time.
 
-What if I got WA and I want to look up the test data
+How to look up the test data
 ---
 The test datas are in the "io/" folder
 in1.txt, in2.txt are inputs \
 out1.txt, out2.txt are outputs by your program \
 ans1.txt, ans2.txt are outputs from the judge
 
-What if The Judge shows Judge_error
+Met with Judge_error
 ---
 這代表作者自己把code寫爛了，請通知作者
 
